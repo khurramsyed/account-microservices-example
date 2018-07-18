@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+# Eureka Client
+eureka:
+  instance:
+    hostname: application
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+# Config Service client
+spring:
+ cloud:
+  config:
+   uri: http://config:8888

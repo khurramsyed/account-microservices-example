@@ -1,0 +1,22 @@
+version: '3'
+services:
+ discovery:
+  build:
+   context: ./discovery-service
+  ports:
+    - "8761:8761"
+ config:
+  build:
+   context: ./config-service
+  ports:
+   - "8888:8888"
+  links:
+   - discovery
+ application:
+   build:
+    context: ./application-service
+   ports:
+    - "8080:8080"
+   links:
+    - discovery
+    - config
