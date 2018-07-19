@@ -20,3 +20,11 @@ services:
    links:
     - discovery
     - config
+ gatweay:
+   build:
+    context: ./edge-service
+   ports:
+     - "9000:9000"
+   links:
+     - discovery
+     - application
