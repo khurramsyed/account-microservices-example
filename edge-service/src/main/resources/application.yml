@@ -17,10 +17,10 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://discovery:8761/eureka/
-sidecar:
-  port: 5000
 
 zuul:
+ prefix: /api
  routes:
   application-service:
-   url: http://application:8080
+   path: /application-service/**
+
